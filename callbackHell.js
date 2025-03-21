@@ -28,11 +28,14 @@ function promisified(ms){
 }
 promisified(1000).then(function(){
     console.log("HI");
+    promisified(3000).then(function(){
+        console.log("HELLO");
+        promisified(5000).then(function(){
+            console.log("HELLO THERE");
+        })
+    })
+
 })
-promisified(3000).then(function(){
-    console.log("HELLO");
-})
-promisified(5000).then(function(){
-    console.log("HELLO THERE");
-})
+
+
   
