@@ -22,17 +22,17 @@
 
 // Now to solve the problem of nested callbacks we use promises
 
-function setTimeoutPromisified(ms) {
-    return new Promise((resolve) => setTimeout(resolve, ms));
-  }
-  
-  setTimeoutPromisified(1000).then(function () {
-    console.log("hi");
-    setTimeoutPromisified(3000).then(function () {
-      console.log("hello");
-      setTimeoutPromisified(5000).then(function () {
-        console.log("hello there");
-      });
-    });
-  });
+function promisified(ms){
+    return new Promise((resolve)=>setTimeout(resolve,ms));
+
+}
+promisified(1000).then(function(){
+    console.log("HI");
+})
+promisified(3000).then(function(){
+    console.log("HELLO");
+})
+promisified(5000).then(function(){
+    console.log("HELLO THERE");
+})
   
