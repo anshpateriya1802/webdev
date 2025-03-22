@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ToDo</title>
+  </head>
+  <body>
+    <div id="todoParent">
+      <div>
+        <h1>ToDo List</h1>
+      </div>
+
+      <div id="itm-1" style="display: flex">
+        <h4>1. Take class</h4>
+        <button onclick="deleteEl(1)">delete</button>
+      </div>
+      <div id="itm-2" style="display: flex" s>
+        <h4>1.Go out to eat</h4>
+
+        <button onclick="deleteEl(2)">delete</button>
+      </div>
+
+      <div>
+        <input type="text" />
+        <button onclick="read()">Add Todo</button>
+      </div>
+    </div>
+
+    <script>
+      function deleteEl(index) {
+        const El = document.getElementById("itm-" + index);
+        // El.parentNode.removeChild(El); // method 1
+        document.getElementById("todoParent").removechild(El);
+      }
+
+      function read() {
+        const boxe = document.querySelector("input");
+        const head1 = document.querySelector("h1");
+        console.log(head1.innerHTML);
+        console.log(boxe.value); // .value only works on input fields
+      }
+    </script>
+  </body>
+</html>

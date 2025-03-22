@@ -11,7 +11,7 @@ let fs=require('fs');
 
 function reading(){
     return new Promise((resolve)=>{
-        fs.readFile("a.txt","utf-8",(err,data)=>{
+        fs.readFile("a.txt","utf-8",(err,data)=>{ 
             if(err){
                 resolve("DATA NOT FOUND...");
             }
@@ -19,8 +19,8 @@ function reading(){
         });
 
     })
-}
+}̋̈
 reading().then((x)=>{
-    console.log("FILE READ"+x);
+    console.log("FILE READ" +x);
     
 })
